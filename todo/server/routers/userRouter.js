@@ -9,7 +9,7 @@ const userRouter = Router();
 
 userRouter.post('/signup', async (req,res,next) => {
     hash(req.body.password,10,(error,hashedPassword) => {
-        console.log(error)
+        //console.log(error)
         if (error) return next(error) // Hash error.
         try {
             pool.query('insert into account (email,password) values ($1,$2) returning *',

@@ -28,19 +28,25 @@ export default function Authentication({authenticationMode}) {
         }
     }
     return (
-        <div>
+        <div className='login-box'>
             <h3>{authenticationMode === AuthenticationMode.Login ? 'Sign in' : 'Sign up'}</h3>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className='user-box'>
+                    <input required name type='email' value={user.email} onChange={e => setUser({...user,email: e.target.value})} />
                     <label>Email</label>
-                    <input type='email' value={user.email} onChange={e => setUser({...user,email: e.target.value})} />
                 </div>
-                <div>
+                <div className='user-box'>
+                    <input required name type='password' value={user.password} onChange={e => setUser({...user,password: e.target.value})} />
                     <label>Password</label>
-                    <input type='password' value={user.password} onChange={e => setUser({...user,password: e.target.value})} />
                 </div>
                 <div>
-                    <button>{authenticationMode === AuthenticationMode.Login ? 'signin' : 'Submit'}</button>
+                    <button className='button'>
+                        <span/>
+                        <span/>
+                        <span/>
+                        <span/>
+                        {authenticationMode === AuthenticationMode.Login ? 'Sign In' : 'Submit'}
+                    </button>
                 </div>
                 <div>
                     <Link to={authenticationMode === AuthenticationMode.Login ? '/signup' : '/signin'}>

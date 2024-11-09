@@ -101,7 +101,7 @@ describe('POST register', () => {
     const password = 'post123';
     it('should register with valid email and password', async() => {
         insertTestUser(email,password);
-        const response = await fetch(base_url + '/user/register', {
+        const response = await fetch(base_url + '/user/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -120,7 +120,7 @@ describe('POST login',() => {
     const password = 'post123';
     insertTestUser(email,password);
     it('should login with valid credentials', async() => {
-        const response = await fetch(base_url + '/user/login', {
+        const response = await fetch(base_url + '/user/signin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

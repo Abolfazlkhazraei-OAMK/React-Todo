@@ -47,7 +47,7 @@ function Home() {
 
   return (
     <div id='container'>
-      <h3>Todo</h3>
+      <h2>Todo</h2>
       <form>
         <input 
           placeholder='Add new task'
@@ -63,10 +63,11 @@ function Home() {
       <ul>
         {
           tasks.map(item => (
-            <Row key={item.id} item={item} deleteTask={deleteTask}/>
+            <Row key={item.id} item={item} deleteTask={deleteTask}/> 
           ))
-        }
+        } 
       </ul>
+      
     </div>
   );
 }
